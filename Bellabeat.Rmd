@@ -1,11 +1,10 @@
 ---
 title: "Bellbet case of study"
 output:
-  html_notebook: default
   html_document:
     df_print: paged
-  pdf_document: default
 ---
+
 ## Introduccion
 This case study is presented as a final assignment to the Google Data Analytics Certificate, where we are going to analyze activity wellness tracking data to find out insights to the company Bellabeat.
 
@@ -86,10 +85,10 @@ Identify all the columns in the sleep data.
 colnames(sleep_day)
 ```
 
-Identify all the columns in the daily_calories data.
+Identify all the columns in the weightLogInfo data.
 
 ```{r}
-colnames(daily_calories)
+colnames(weightLogInfo)
 ```
 
 ### Looking for NA values for a key datasets
@@ -104,9 +103,9 @@ Looking for NA values in the sleep data
 colSums(is.na(sleep_day)) 
 ```
 
-Looking for NA values in the dalily_calories
+Looking for NA values in the weightLogInfo
 ```{r}
-colSums(is.na(daily_calories)) 
+colSums(is.na(weightLogInfo)) 
 ```
 
 As it was shown there is no NA values for the datasets and also they are well named (camel case), so we can continue with analyze.
@@ -119,13 +118,13 @@ How many unique participants are there in each dataframe?
 ```{r distinct users}
 n_distinct(daily_activity$Id)
 n_distinct(sleep_day$Id)
-n_distinct(daily_calories$Id)
+n_distinct(weightLogInfo$Id)
 ```
 
 ```{r distinct rows}
 nrow(daily_activity)
 nrow(sleep_day)
-nrow(daily_calories)
+nrow(weightLogInfo)
 ```
 What are some quick summary statistics we'd want to know about each data frame?
 
@@ -145,12 +144,7 @@ sleep_day %>%
   TotalTimeInBed) %>%
   summary()
 ```
-For the daily_calories dataframe:
-```{r}
-daily_activity %>% 
-  select(Calories) %>% 
-  summary()
-```
+
 
 ### Plotting a few explorations
 
