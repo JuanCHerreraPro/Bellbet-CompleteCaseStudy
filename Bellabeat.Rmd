@@ -1,5 +1,5 @@
 ---
-title: "Bellbet case of study"
+title: "Bellabeat case of study"
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
